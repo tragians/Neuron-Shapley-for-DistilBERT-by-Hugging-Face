@@ -19,7 +19,6 @@ TIME_START = time.time()
 NUM_CLASSES = 4 
 NUM_SAMPLES = 64
 
-truncation = 0.2
 time.sleep(10 * np.random.random())
 
 
@@ -38,7 +37,7 @@ def remove_players(model, players):
         # layer normalization istead of batch normalization:
         # relevant only for encoder/decoder layers
         # should be consired and implemented if these layers are included
-        # to the pplayers 
+        # to the players 
         
 
 def one_iteration(
@@ -88,7 +87,6 @@ def one_iteration(
             marginals[c[idx]] = (old_val - new_val) / len(c[idx])
             old_val = new_val
 
-            # truncation is not really used in this implementation in practice
             if isinstance(truncation, int):
                 if n >= truncation:      
                     break
