@@ -4,11 +4,9 @@ import os
 import time
 import sys
 import torch
-import copy
 from transformers import DistilBertForSequenceClassification
 from google.colab import drive
 import numpy as np
-from datasets import load_dataset
 from dbtokenizer import CustomTokenizer
 from torch.utils.data import TensorDataset, random_split, DataLoader, RandomSampler, SequentialSampler
 from sklearn.metrics import accuracy_score
@@ -21,7 +19,6 @@ TIME_START = time.time()
 NUM_CLASSES = 4 
 NUM_SAMPLES = 64
 
-bound = 'Bernstein'
 truncation = 0.2
 time.sleep(10 * np.random.random())
 
